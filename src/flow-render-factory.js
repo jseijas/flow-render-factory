@@ -85,7 +85,7 @@ class FlowRenderFactory {
    */
   render(session, card, locale, variables) {
     let channel = this.getChannel(session);
-    let renderer = this.getRenderer(channel, card.cartType);
+    let renderer = this.getRenderer(channel, card.cardType);
     if (!renderer) {
       throw new Error('Error: renderer not found');
     }
