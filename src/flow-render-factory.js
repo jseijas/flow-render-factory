@@ -1,5 +1,9 @@
 import _ from 'lodash';
 import FlowRendererText from './renderers/flow-renderer-text';
+import FlowRendererImage from './renderers/flow-renderer-image';
+import FlowRendererHero from './renderers/flow-renderer-hero';
+import FlowRendererThumbnail from './renderers/flow-renderer-thumbnail';
+import FlowRendererCarousel from './renderers/flow-renderer-carousel';
 
 /**
  * Class for the Flow Renderer Factory.
@@ -71,6 +75,10 @@ class FlowRenderFactory {
    */
   addDefaultRenderers() {
     this.addRenderer(new FlowRendererText(this.settings));
+    this.addRenderer(new FlowRendererImage(this.settings));
+    this.addRenderer(new FlowRendererHero(this.settings));
+    this.addRenderer(new FlowRendererThumbnail(this.settings));
+    this.addRenderer(new FlowRendererCarousel(this.settings));
   }
 
   /**
