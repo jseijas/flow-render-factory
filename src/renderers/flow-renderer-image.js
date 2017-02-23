@@ -6,7 +6,7 @@ import FlowRenderer from '../flow-renderer';
 class FlowRendererImage extends FlowRenderer {
   constructor(settings) {
     super(settings);
-    this.cardType = 'image';
+    this.type = 'image';
   }
 
   /**

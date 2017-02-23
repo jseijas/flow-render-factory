@@ -8,7 +8,7 @@ import _ from 'lodash';
 class FlowRendererThumbnail extends FlowRenderer {
   constructor(settings) {
     super(settings);
-    this.cardType = 'thumbnail';
+    this.type = 'thumbnail';
   }
 
   /**

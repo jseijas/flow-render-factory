@@ -7,7 +7,7 @@ import FlowRendererHero from './flow-renderer-hero';
 class FlowRendererCarousel extends FlowRenderer {
   constructor(settings) {
     super(settings);
-    this.cardType = 'carousel';
+    this.type = 'carousel';
   }
 
   /**

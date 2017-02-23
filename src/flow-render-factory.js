@@ -31,7 +31,7 @@ class FlowRenderFactory {
     if (!this.renderers[channel]) {
       this.renderers[channel] = {};
     }
-    this.renderers[channel][renderer.cardType] = renderer;
+    this.renderers[channel][renderer.type] = renderer;
   }
 
   /**
@@ -54,17 +54,17 @@ class FlowRenderFactory {
    * Get a renderer given the channel and the card type.
    * 
    * @param { String } channel Channel name.
-   * @param { String } cardType Type of the card.
+   * @param { String } type Type of the card.
    * @returns { Object } Renderer for this channel and card type.
    */
-  getRenderer(channel, cardType) {
+  getRenderer(channel, type) {
     let renderer;
     if (this.renderers[channel]) {
-      renderer = this.renderers[channel][cardType];
+      renderer = this.renderers[channel][type];
     }
     if (!renderer) {
       if (this.renderers['default']) {
-        renderer = this.renderers['default'][cardType];
+        renderer = this.renderers['default'][type];
       }
     }
     return renderer;
@@ -93,7 +93,7 @@ class FlowRenderFactory {
    */
   render(session, card, locale, variables) {
     let channel = this.getChannel(session);
-    let renderer = this.getRenderer(channel, card.cardType);
+    let renderer = this.getRenderer(channel, card.type);
     if (!renderer) {
       throw new Error('Error: renderer not found');
     }

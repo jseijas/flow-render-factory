@@ -7,14 +7,15 @@ import _ from 'lodash';
 class FlowRendererHero extends FlowRenderer {
   constructor(settings) {
     super(settings);
-    this.cardType = 'hero';
+    this.type = 'hero';
   }
 
   static buildCard(builder, session, card) {
+    console.log('OLA K ASE');
     let result;
-    if (card.cardType === 'hero') {
+    if (card.type === 'hero') {
       result = new builder.HeroCard(session);
-    } else if (card.cardType === 'thumbnail') {
+    } else if (card.type === 'thumbnail') {
       result = new builder.ThumbnailCard(session);
     } else {
       throw new Error('Unknown type for card');
