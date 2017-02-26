@@ -45,6 +45,7 @@ class FlowRenderer {
    */
   render(session, card, locale, variables) {
     let translatedCard = this.translate(card, locale, variables);
+    session.dialogData.lastCard = translatedCard;
     return this.transform(session, translatedCard);
   }
 }

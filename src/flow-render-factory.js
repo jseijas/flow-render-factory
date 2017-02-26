@@ -4,6 +4,7 @@ import FlowRendererImage from './renderers/flow-renderer-image';
 import FlowRendererHero from './renderers/flow-renderer-hero';
 import FlowRendererThumbnail from './renderers/flow-renderer-thumbnail';
 import FlowRendererCarousel from './renderers/flow-renderer-carousel';
+import FlowRendererPrompt from './renderers/flow-renderer-prompt';
 
 /**
  * Class for the Flow Renderer Factory.
@@ -79,6 +80,7 @@ class FlowRenderFactory {
     this.addRenderer(new FlowRendererHero(this.settings));
     this.addRenderer(new FlowRendererThumbnail(this.settings));
     this.addRenderer(new FlowRendererCarousel(this.settings));
+    this.addRenderer(new FlowRendererPrompt(this.settings));
   }
 
   /**
