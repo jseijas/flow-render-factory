@@ -3,12 +3,12 @@ import FlowRendererHero from './flow-renderer-hero';
 import _ from 'lodash';
 
 /**
- * Class for rendering a carousel card.
+ * Class for rendering a list card.
  */
-class FlowRendererCarousel extends FlowRenderer {
+class FlowRendererList extends FlowRenderer {
   constructor(settings) {
     super(settings);
-    this.type = 'carousel';
+    this.type = 'list';
   }
 
   /**
@@ -20,7 +20,7 @@ class FlowRendererCarousel extends FlowRenderer {
   transform(session, card) {
     let result = new this.builder.Message(session)
       .textFormat(this.builder.TextFormat.xml)
-      .attachmentLayout(this.builder.AttachmentLayout.carousel);
+      .attachmentLayout(this.builder.AttachmentLayout.list);
     let arr = [];
     for (let i = 0; i < card.cards.length; i++) {
       let soncard = card.cards[i];
@@ -34,5 +34,5 @@ class FlowRendererCarousel extends FlowRenderer {
   }
 }
 
-export default FlowRendererCarousel;
+export default FlowRendererList;
 
