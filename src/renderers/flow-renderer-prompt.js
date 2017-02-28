@@ -17,7 +17,7 @@ class FlowRendererPrompt extends FlowRenderer {
     for (let i = 0; i < card.options.length; i++) {
       options.push(card.options[i].text);
     }
-    let style = card.style ? { listStyle: card.style } : undefined;
+    let style = card.style ? { listStyle: this.builder.ListStyle[card.style] } : undefined;
     return this.builder.Prompts.choice(session, card.text, options, style);
   }
 

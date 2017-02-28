@@ -1,5 +1,6 @@
 import FlowRenderer from '../flow-renderer';
 import FlowRendererHero from './flow-renderer-hero';
+import _ from 'lodash';
 
 /**
  * Class for rendering a text card.
@@ -19,10 +20,14 @@ class FlowRendererCarousel extends FlowRenderer {
   transform(session, card) {
     let result = new this.builder.Message(session)
       .textFormat(this.builder.TextFormat.xml)
-      .attachmentLayout(this.builder.attachmentLayout.carousel);
+      .attachmentLayout(this.builder.AttachmentLayout.carousel);
     let arr = [];
     for (let i = 0; i < card.cards.length; i++) {
-      arr.push(FlowRendererHero.buildCard(this.builder, session, card.cards[i]));
+      let soncard = card.cards[i];
+      if (_.isString(soncard)) {
+        soncard = this.settings.parent.getCard(soncard);
+      }
+      arr.push(FlowRendererHero.buildCard(this.builder, session, soncard));
     }
     result.attachments(arr);
     return result;
