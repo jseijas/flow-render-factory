@@ -11,7 +11,6 @@ class FlowRendererHero extends FlowRenderer {
   }
 
   static buildCard(builder, session, card) {
-    console.log('OLA K ASE');
     let result;
     if (card.type === 'hero') {
       result = new builder.HeroCard(session);

@@ -1,6 +1,6 @@
 {
   "name": "flow-render-factory",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Flow render factory",
   "main": "lib/index.js",
   "scripts": {
